@@ -1,0 +1,39 @@
+.contactInfo {
+  margin-bottom: 1.5rem;
+}
+
+.contactLink {
+  color: #7ba3a8;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.subheading {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #3a4f5f;
+}
+
+.classTimesList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.classTimeItem {
+  background: #f7f9fa;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  width: 250px;
+  text-align: center;
+}
+
+.classTimeItem:nth-child(even) {
+  background: #e9eef1;
+}

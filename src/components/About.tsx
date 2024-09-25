@@ -1,8 +1,6 @@
-import styles from '@/styles/about.module.css';
-
 export default function About() {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <h1>Our Story</h1>
       <p>
         The Clay Club is Bev Silbermann’s beautiful homely garden studio in Rose

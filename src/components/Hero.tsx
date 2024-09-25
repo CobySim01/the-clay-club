@@ -2,8 +2,7 @@ import styles from '@/styles/hero.module.css';
 import Image from 'next/image';
 
 const buttonNavigation = [
-  { label: 'Learn More About Us', path: '/about' },
-  { label: 'Class Information', path: '/classes' },
+  { label: 'Class Info', path: '/classes' },
   { label: 'Gallery', path: '/gallery' },
 ];
 
@@ -24,9 +23,9 @@ const Hero: React.FC = () => {
         </p>
         <div className={styles.buttonContainer}>
           {buttonNavigation.map(({ label, path }) => (
-            <button key={path} className={styles.button}>
-              {label}
-            </button>
+            <a key={path} href={path}>
+              <button className={styles.button}>{label}</button>
+            </a>
           ))}
         </div>
       </div>

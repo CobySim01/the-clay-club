@@ -12,7 +12,6 @@
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
-    "react-grid-gallery": "^1.0.1",
     "react-image-lightbox": "^5.1.4",
     "yarn": "^1.22.22"
   },

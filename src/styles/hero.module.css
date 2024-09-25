@@ -1,7 +1,7 @@
 .heroContainer {
   position: relative;
   width: 100%;
-  height: 80vh; /* Adjust height as needed */
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  max-width: 800px; /* Constrain the text to a max width */
+  max-width: 800px;
 }
 
 .textContainer h1 {
@@ -41,26 +41,29 @@
 
 .buttonContainer {
   display: flex;
-  justify-content: space-between;
-  gap: 20px; /* Ensures proper spacing between buttons */
+  justify-content: space-evenly;
+  gap: 10px;
   width: 100%;
-  max-width: 600px; /* Constrain the buttons container */
-  margin: 0 auto; /* Center the buttons */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .button {
-  padding: 10px 30px;
+  padding: 15px 20px;
   font-size: 1rem;
   color: white;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid white;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  flex: 1; /* Ensures buttons are evenly sized */
-  max-width: 200px; /* Limits button width */
+  flex: 1;
+  max-width: 200px;
+  font-weight: 700;
+  text-shadow: 0 0 3px black;
+  width: 150px;
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
