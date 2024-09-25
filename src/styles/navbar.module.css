@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #7ba3a8;
+  padding: 10px 0;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+}
+
+.navlinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navlinks a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.navlinks a::after {
+  content: '|';
+  color: white;
+  margin-left: 15px;
+}
+
+.navlinks a:last-child::after {
+  content: '';
+}

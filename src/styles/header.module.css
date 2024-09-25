@@ -1,0 +1,25 @@
+.topBar {
+  display: flex;
+  justify-content: space-between; /* Ensures call info, logo, and cart info are spaced evenly */
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.callInfo,
+.cartInfo {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  flex-grow: 1; /* Ensures the logo stays centered by expanding the space */
+  display: flex;
+  justify-content: center; /* Centers the logo horizontally */
+}
+
+.callInfo strong,
+.cartInfo strong {
+  color: #e07a27; /* Orange color for highlighting text */
+}

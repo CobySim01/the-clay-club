@@ -1,0 +1,66 @@
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  z-index: -1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 800px; /* Constrain the text to a max width */
+}
+
+.textContainer h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.textContainer p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Ensures proper spacing between buttons */
+  width: 100%;
+  max-width: 600px; /* Constrain the buttons container */
+  margin: 0 auto; /* Center the buttons */
+}
+
+.button {
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1; /* Ensures buttons are evenly sized */
+  max-width: 200px; /* Limits button width */
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
