@@ -7,13 +7,6 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -40,7 +33,6 @@ body {
 }
 
 .container h1 {
-  font-size: 1.8em;
   color: #7ba3a8;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -72,7 +64,7 @@ body {
 
 .title {
   color: #7ba3a8;
-  font-size: 2.5rem;
+  font-size: 1.8em;
   margin-bottom: 1rem;
 }
 
@@ -80,4 +72,23 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #7ba3a8;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+  background-color: #e8f4f4;
 }

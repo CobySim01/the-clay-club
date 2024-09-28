@@ -25,7 +25,7 @@
 .navlinks a::after {
   content: '|';
   color: white;
-  margin-left: 15px;
+  margin-left: 1.8rem;
 }
 
 .navlinks a:last-child::after {
