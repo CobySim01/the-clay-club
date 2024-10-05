@@ -25,7 +25,7 @@ export default async function Classes() {
         <a href="/contact" className={styles.contactLink}>
           Contact Bev
         </a>{' '}
-        for more information.
+        for class details and prices.
       </p>
       <h2 className="title" style={{ fontSize: '1.3rem' }}>
         Class Times
@@ -38,7 +38,7 @@ export default async function Classes() {
         ))}
       </ul>
       <Gallery images={images} />
-      <h1 className="title">Taster Pass</h1>
+      <h1 className="title">Taster Classes</h1>
       <p className="description">A Two Class Pass is available for $140.</p>
       <p className="description">
         Give your loved ones the gift of creativity with our vouchers for two

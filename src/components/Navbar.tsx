@@ -1,5 +1,8 @@
+'use client';
+
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const navItems = [
   { path: '/', label: 'Home' },
@@ -10,9 +13,18 @@ const navItems = [
 ];
 
 const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navlinks}>
+      <button className={styles.hamburger} onClick={toggleMenu}>
+        ☰
+      </button>
+      <div className={`${styles.navlinks} ${isMenuOpen ? styles.show : ''}`}>
         {navItems.map(item => (
           <Link key={item.path} href={item.path}>
             {item.label}
