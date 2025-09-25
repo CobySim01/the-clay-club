@@ -39,7 +39,7 @@ export default async function Classes() {
       </ul>
       <Gallery images={images} />
       <h1 className="title">Taster Classes</h1>
-      <p className="description">A Two Class Pass is available for $140.</p>
+      <p className="description">A Two Class Pass is available for $180.</p>
       <p className="description">
         Give your loved ones the gift of creativity with our vouchers for two
         class passes. It’s perfect for those wanting to give pottery classes a
