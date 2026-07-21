@@ -4,91 +4,42 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --clay-brown: #391c18;
+  --clay-orange: #9c400d;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), system-ui, sans-serif;
   }
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  line-height: 1.6;
+@layer components {
+  /* Big all-caps display headline (Akzidenz-Grotesk → Archivo) */
+  .headline {
+    @apply text-center font-display font-extrabold uppercase leading-[0.95] tracking-tight text-clay-brown;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  /* Centered body copy block */
+  .prose-block {
+    @apply mx-auto max-w-prose text-center text-base leading-relaxed text-ink sm:text-lg;
+  }
 
-.container h1 {
-  color: #7ba3a8;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.container p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.container blockquote {
-  font-style: italic;
-  padding: 10px 20px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #7ba3a8;
-  margin: 20px 0;
-}
-
-.container blockquote p {
-  margin: 0;
-}
-
-.container blockquote p:last-child {
-  text-align: right;
-  font-weight: bold;
-  color: #e07a27;
-}
-
-.title {
-  color: #7ba3a8;
-  font-size: 1.8em;
-  margin-bottom: 1rem;
-}
-
-.description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0;
-}
-
-ul li {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #7ba3a8;
-  color: #333;
-  transition: background-color 0.3s ease;
-}
-
-ul li:hover {
-  background-color: #e8f4f4;
+  /* Break an element out to the full viewport width from inside a centered layout */
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }

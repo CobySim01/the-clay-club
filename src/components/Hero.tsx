@@ -1,35 +1,32 @@
-import styles from '@/styles/hero.module.css';
+import { images, logos } from '@/lib/site';
 import Image from 'next/image';
-
-const buttonNavigation = [
-  { label: 'Class Info', path: '/classes' },
-  { label: 'Gallery', path: '/gallery' },
-];
 
 const Hero: React.FC = () => {
   return (
-    <div className={styles.heroContainer}>
+    <section className="relative h-[420px] w-full sm:h-[560px] lg:h-[620px]">
+      <h1 className="sr-only">
+        The Clay Club — Hand-Building Pottery Classes in Rose Bay, Sydney
+      </h1>
       <Image
-        src="/images/hero.png"
-        alt="background"
-        layout="fill"
-        className={styles.backgroundImage}
+        src={images.hero}
+        alt="Hands shaping clay in a hand-building pottery class"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
       />
-      <div className={styles.textContainer}>
-        <h1>Clay nurtures our sense of touch and nourishes the soul</h1>
-        <p>
-          Ceramic artist and teacher Bev Silbermann offers hand building pottery
-          classes and designs custom pieces for indoor and outdoor spaces.
-        </p>
-        <div className={styles.buttonContainer}>
-          {buttonNavigation.map(({ label, path }) => (
-            <a key={path} href={path}>
-              <button className={styles.button}>{label}</button>
-            </a>
-          ))}
-        </div>
+      <div className="absolute inset-0 bg-black/15" />
+      <div className="absolute inset-0 flex items-center justify-center p-6">
+        <Image
+          src={logos.horizontal}
+          alt="The Clay Club"
+          width={1055}
+          height={208}
+          priority
+          className="h-auto w-[82%] max-w-[660px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+        />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,56 +1,92 @@
-import styles from '@/styles/contact.module.css';
+import { MailIcon, MapPinIcon, PhoneIcon } from '@/components/icons';
+import Button, { ButtonGroup } from '@/components/ui/Button';
+import { ImageRow } from '@/components/ui/ImageRow';
+import { Container, Heading, Prose, Section } from '@/components/ui/Section';
+import { contact, images } from '@/lib/site';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Contact',
-};
+  description:
+    'Get in touch with The Clay Club in Rose Bay, Sydney about pottery classes, private events, and ceramic commissions. Call, email, or message Bev.',
+  path: '/contact',
+});
+
+function ContactItem({
+  icon,
+  href,
+  children,
+}: {
+  icon: React.ReactNode;
+  href: string;
+  children: React.ReactNode;
+}) {
+  const isHttp = href.startsWith('http');
+  return (
+    <a
+      href={href}
+      target={isHttp ? '_blank' : undefined}
+      rel={isHttp ? 'noopener noreferrer' : undefined}
+      className="group flex items-center gap-4 text-left"
+    >
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-clay-brown text-white">
+        {icon}
+      </span>
+      <span className="font-body text-base leading-snug text-ink transition-colors group-hover:text-clay-orange sm:text-lg">
+        {children}
+      </span>
+    </a>
+  );
+}
 
 export default function Contact() {
   return (
-    <div className={styles.container}>
-      <div className={styles.contactInfo}>
-        <div className={styles.contactItem}>
-          <h1 className={styles.heading}>Address</h1>
-          <p className={styles.obfuscated}></p>
-          <p>
-            <a
-              href="https://www.google.com/maps/place/13+Beresford+Rd,+Rose+Bay+NSW+2029"
-              target="_blank"
-            >
-              13 Beresford Rd, <br /> Rose Bay NSW 2029
-            </a>
-          </p>
-        </div>
-        <div className={styles.divider}></div>
-        <div className={styles.contactItem}>
-          <h1 className={styles.heading}>Phone</h1>
-          <p className={styles.obfuscated}></p>
-          <p>
-            <a href="tel:+61421344111" target="_blank">
-              +61 421 344 111
-            </a>
-          </p>
-        </div>
-        <div className={styles.divider}></div>
-        <div className={styles.contactItem}>
-          <h1 className={styles.heading}>Email</h1>
-          <p className={styles.obfuscated}></p>
-          <p>
-            <a href="mailto:bev@theclayclub.com.au" target="_blank">
-              bev@theclayclub.com.au
-            </a>
-          </p>
-        </div>
-      </div>
+    <>
+      <Section className="pb-8">
+        <Heading>Get In Touch</Heading>
+        <Container className="mt-10">
+          <Prose>
+            Have a question about classes, events, or commissions? We&apos;d
+            love to hear from you. Whether you&apos;re curious about joining a
+            class, planning a special event, or after something from the shop,
+            send us a message and we&apos;ll get back to you as soon as we can.
+          </Prose>
+        </Container>
 
-      <div className={styles.mapContainer}>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6625.262112179092!2d151.25405227564795!3d-33.873397973224755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12adc77e943a91%3A0xb7205363674e85ac!2s13%20Beresford%20Rd%2C%20Rose%20Bay%20NSW%202029!5e0!3m2!1sen!2sau!4v1727242140999!5m2!1sen!2sau"
-          width="600"
-          height="450"
-          style={{ border: 0 }}
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
+        <div className="mx-auto mt-12 flex max-w-4xl flex-col flex-wrap items-center justify-center gap-8 px-6 sm:flex-row sm:gap-12">
+          <ContactItem
+            icon={<MapPinIcon className="h-6 w-6" />}
+            href={contact.mapsUrl}
+          >
+            {contact.addressLines.map(line => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </ContactItem>
+          <ContactItem
+            icon={<PhoneIcon className="h-6 w-6" />}
+            href={contact.phoneHref}
+          >
+            {contact.phoneDisplay}
+          </ContactItem>
+          <ContactItem
+            icon={<MailIcon className="h-6 w-6" />}
+            href={contact.emailHref}
+          >
+            {contact.email}
+          </ContactItem>
+        </div>
+      </Section>
+
+      <ImageRow images={images.contact} />
+
+      <Section>
+        <ButtonGroup>
+          <Button href={contact.emailHref}>Contact Bev</Button>
+          <Button href={contact.newsletterHref}>Sign Up For Newsletter</Button>
+        </ButtonGroup>
+      </Section>
+    </>
   );
 }
