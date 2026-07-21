@@ -5,13 +5,12 @@ export const contact = {
   addressOneLine: '13 Beresford Rd, Rose Bay NSW 2029',
   mapsUrl:
     'https://www.google.com/maps/place/13+Beresford+Rd,+Rose+Bay+NSW+2029',
-  phoneDisplay: '042 134 4111',
+  phoneDisplay: '0421 344 111',
   phoneHref: 'tel:+61421344111',
   email: 'bev@theclayclub.com.au',
   emailHref: 'mailto:bev@theclayclub.com.au',
   whatsappHref: 'https://wa.me/61421344111',
-  // NOTE: update to the real Instagram handle when confirmed.
-  instagramHref: 'https://www.instagram.com/theclayclub/',
+  instagramHref: 'https://www.instagram.com/the_clay_club',
   // "Sign Up For Newsletter" has no backend — opens a pre-filled email.
   newsletterHref:
     'mailto:bev@theclayclub.com.au?subject=Newsletter%20Sign%20Up&body=Hi%20Bev%2C%20please%20add%20me%20to%20The%20Clay%20Club%20newsletter.',

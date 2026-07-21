@@ -4,7 +4,6 @@
 import type { Metadata } from 'next';
 import { contact } from './site';
 
-// NOTE: confirm the production domain. Derived from the contact email domain.
 export const siteUrl = 'https://theclayclub.com.au';
 export const siteName = 'The Clay Club';
 
@@ -63,8 +62,8 @@ export const localBusinessJsonLd = {
   // Approximate coordinates for the Rose Bay studio address.
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -33.8712,
-    longitude: 151.2681,
+    latitude: -33.873315726966496,
+    longitude: 151.25667403610825,
   },
   hasMap: contact.mapsUrl,
   areaServed: { '@type': 'City', name: 'Sydney' },
