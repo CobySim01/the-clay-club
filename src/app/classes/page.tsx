@@ -50,7 +50,7 @@ export default function Classes() {
         <Heading as="h2">Times</Heading>
         <Container className="mt-8">
           <p className="prose-block">
-            Tuesday or Thursday evenings;
+            Tuesday evenings;
             <br />
             Wednesday or Thursday mornings
           </p>
