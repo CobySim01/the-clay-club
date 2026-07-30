@@ -3,7 +3,11 @@ import Image from 'next/image';
 type Product = { src: string; w: number; h: number };
 
 /** Masonry portfolio grid (varied heights, matching the design); each tile opens the full image. */
-export default function ProductsGrid({ images }: { images: readonly Product[] }) {
+export default function ProductsGrid({
+  images,
+}: {
+  images: readonly Product[];
+}) {
   return (
     <div className="mx-auto max-w-6xl columns-2 gap-3 px-4 [column-fill:balance] sm:columns-3 lg:columns-4">
       {images.map((img, i) => (
