@@ -1,4 +1,4 @@
-import ProductsGrid from '@/components/ProductsGrid';
+import Gallery from '@/components/Gallery';
 import Button from '@/components/ui/Button';
 import { Container, Heading, Prose, Section } from '@/components/ui/Section';
 import { contact, images } from '@/lib/site';
@@ -7,7 +7,7 @@ import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata({
   title: 'Ceramics & Commissions',
   description:
-    'Browse Bev Silbermann’s hand-built ceramic pieces — bowls, vases, tiles and sculptures made in her Rose Bay studio. Custom commissions available on request.',
+    'Browse Bev Silbermann’s hand-built ceramic pieces — bowls, vases, tiles and sculptures made in her Rose Bay studio, plus work made by her students. Custom commissions available on request.',
   path: '/products',
 });
 
@@ -33,11 +33,25 @@ export default function Products() {
         </Container>
       </Section>
 
-      <ProductsGrid images={images.products} />
+      <Gallery rows={images.products} label="Ceramic piece by Bev Silbermann" />
+
+      <Section className="pb-8">
+        <Heading as="h2">Students Work</Heading>
+        <Container className="mt-10">
+          <Prose>Browse what my students have made in class</Prose>
+        </Container>
+      </Section>
+
+      <Gallery
+        rows={images.students}
+        label="Piece made by a Clay Club student"
+      />
 
       <Section>
         <div className="flex justify-center">
-          <Button href={contact.newsletterHref}>Sign Up For Newsletter</Button>
+          <Button href={contact.mailingListHref}>
+            Sign Up For Our Mailing List
+          </Button>
         </div>
       </Section>
     </>

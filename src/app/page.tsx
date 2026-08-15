@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import Testimonials from '@/components/Testimonials';
 import Button, { ButtonGroup } from '@/components/ui/Button';
 import { ImageRow } from '@/components/ui/ImageRow';
 import { Container, Heading, Prose, Section } from '@/components/ui/Section';
@@ -30,8 +31,8 @@ export default function Home() {
           </Prose>
           <ButtonGroup>
             <Button href="/classes">Our Classes</Button>
-            <Button href={contact.newsletterHref}>
-              Sign Up For Newsletter
+            <Button href={contact.mailingListHref}>
+              Sign Up For Our Mailing List
             </Button>
           </ButtonGroup>
         </Container>
@@ -115,6 +116,10 @@ export default function Home() {
         <div className="flex justify-center">
           <Button href="/contact">Contact Bev</Button>
         </div>
+      </Section>
+
+      <Section className="pt-0">
+        <Testimonials />
       </Section>
     </>
   );

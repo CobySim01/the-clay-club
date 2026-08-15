@@ -1,4 +1,4 @@
-import { MailIcon, MapPinIcon, PhoneIcon } from '@/components/icons';
+import { MailIcon, MapPinIcon, WhatsAppIcon } from '@/components/icons';
 import Button, { ButtonGroup } from '@/components/ui/Button';
 import { ImageRow } from '@/components/ui/ImageRow';
 import { Container, Heading, Prose, Section } from '@/components/ui/Section';
@@ -65,10 +65,13 @@ export default function Contact() {
             ))}
           </ContactItem>
           <ContactItem
-            icon={<PhoneIcon className="h-6 w-6" />}
-            href={contact.phoneHref}
+            icon={<WhatsAppIcon className="h-6 w-6" />}
+            href={contact.whatsappHref}
           >
-            {contact.phoneDisplay}
+            {contact.whatsappDisplay}
+            <span className="block text-sm text-ink/60">
+              Message us on WhatsApp
+            </span>
           </ContactItem>
           <ContactItem
             icon={<MailIcon className="h-6 w-6" />}
@@ -83,8 +86,10 @@ export default function Contact() {
 
       <Section>
         <ButtonGroup>
-          <Button href={contact.emailHref}>Contact Bev</Button>
-          <Button href={contact.newsletterHref}>Sign Up For Newsletter</Button>
+          <Button href={contact.whatsappHref}>Contact Bev on WhatsApp</Button>
+          <Button href={contact.mailingListHref}>
+            Sign Up For Our Mailing List
+          </Button>
         </ButtonGroup>
       </Section>
     </>

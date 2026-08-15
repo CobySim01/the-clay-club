@@ -1,6 +1,7 @@
 'use client';
 
 import { logos, nav } from '@/lib/site';
+import LogoLink from '@/components/LogoLink';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -11,20 +12,19 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 bg-clay-brown text-white">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-20 sm:px-8">
-        <Link
-          href="/"
-          aria-label="The Clay Club — home"
-          onClick={() => setOpen(false)}
+        <LogoLink
+          onNavigate={() => setOpen(false)}
           className="relative block h-10 w-10 shrink-0 sm:h-12 sm:w-12"
         >
           <Image
             src={logos.spiral}
             alt="The Clay Club"
             fill
+            sizes="48px"
             className="object-contain"
             priority
           />
-        </Link>
+        </LogoLink>
 
         <nav className="hidden items-center gap-8 md:flex lg:gap-12">
           {nav.map(item => (

@@ -1,4 +1,5 @@
 import Button, { ButtonGroup } from '@/components/ui/Button';
+import Testimonials from '@/components/Testimonials';
 import { ImageBanner, ImageRow } from '@/components/ui/ImageRow';
 import { Container, Heading, Prose, Section } from '@/components/ui/Section';
 import { contact, images } from '@/lib/site';
@@ -47,6 +48,10 @@ export default function Classes() {
       <ImageBanner src={images.classesIntro} />
 
       <Section>
+        <Testimonials />
+      </Section>
+
+      <Section className="pt-0">
         <Heading as="h2">Times</Heading>
         <Container className="mt-8">
           <p className="prose-block">
@@ -110,8 +115,8 @@ export default function Classes() {
         <div className="mt-12">
           <ButtonGroup>
             <Button href="/contact">Contact Bev</Button>
-            <Button href={contact.newsletterHref}>
-              Sign Up For Newsletter
+            <Button href={contact.mailingListHref}>
+              Sign Up For Our Mailing List
             </Button>
           </ButtonGroup>
         </div>

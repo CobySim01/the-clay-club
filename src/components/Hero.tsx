@@ -17,13 +17,26 @@ const Hero: React.FC = () => {
       />
       <div className="absolute inset-0 bg-black/15" />
       <div className="absolute inset-0 flex items-center justify-center p-6">
+        {/* Mobile: the compact stacked mark (footer size) fits a narrow screen
+            far better than the wide wordmark. */}
+        <div className="relative h-24 w-20 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] sm:hidden">
+          <Image
+            src={logos.stacked}
+            alt="The Clay Club"
+            fill
+            sizes="80px"
+            priority
+            className="object-contain"
+          />
+        </div>
         <Image
           src={logos.horizontal}
           alt="The Clay Club"
           width={1055}
           height={208}
           priority
-          className="h-auto w-[82%] max-w-[660px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+          sizes="(max-width: 640px) 0px, 660px"
+          className="hidden h-auto w-[82%] max-w-[660px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] sm:block"
         />
       </div>
     </section>

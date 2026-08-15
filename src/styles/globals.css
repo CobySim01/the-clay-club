@@ -36,10 +36,67 @@ body {
     @apply mx-auto max-w-prose text-center text-base leading-relaxed text-ink sm:text-lg;
   }
 
+  /* One row of the Commissions/Students mosaic. On phones four tiles across is
+     unreadable, so rows collapse to two columns of portrait tiles; from `sm` up
+     each row takes the design's own column widths (--row-cols) and aspect ratio
+     (--row-ratio), reproducing the Canva mosaic exactly. */
+  .mosaic-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mosaic-cell {
+    aspect-ratio: 4 / 5;
+  }
+
+  /* Phones get a plain centred cover crop — the design's framing is measured
+     against the desktop cell, so it only applies once the row is laid out. */
+  .mosaic-cell img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @screen sm {
+    .mosaic-row {
+      grid-template-columns: var(--row-cols);
+      aspect-ratio: var(--row-ratio);
+    }
+
+    .mosaic-cell {
+      aspect-ratio: auto;
+      height: 100%;
+    }
+
+    /* Place the photo exactly where the design put it inside its frame. */
+    .mosaic-cell img {
+      inset: auto;
+      left: var(--fit-x);
+      top: var(--fit-y);
+      width: var(--fit-w);
+      height: var(--fit-h);
+      max-width: none;
+      object-fit: fill;
+    }
+  }
+
   /* Break an element out to the full viewport width from inside a centered layout */
   .full-bleed {
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  /* Swipeable scroll track without a visible scrollbar (testimonial carousel) */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

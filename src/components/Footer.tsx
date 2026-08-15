@@ -1,23 +1,8 @@
 import { contact, logos, nav } from '@/lib/site';
 import { InstagramIcon, MailIcon, WhatsAppIcon } from '@/components/icons';
+import LogoLink from '@/components/LogoLink';
 import Image from 'next/image';
 import Link from 'next/link';
-
-function FooterNav({ className = '' }: { className?: string }) {
-  return (
-    <nav className={className}>
-      {nav.map(item => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="font-body text-base tracking-wide text-white/90 transition-colors hover:text-white sm:text-lg"
-        >
-          {item.label}
-        </Link>
-      ))}
-    </nav>
-  );
-}
 
 function Socials() {
   const items = [
@@ -43,20 +28,22 @@ function Socials() {
   );
 }
 
+/** Single footer row: logo, address, nav, socials. */
 export default function Footer() {
   return (
     <footer className="bg-clay-brown text-white">
       <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8">
-        <div className="flex flex-col items-center gap-10 text-center md:flex-row md:items-center md:justify-between md:text-left">
+        <div className="flex flex-col items-center gap-10 text-center md:flex-row md:justify-between md:text-left">
           <div className="flex items-center gap-6">
-            <div className="relative h-24 w-20 shrink-0">
+            <LogoLink className="relative block h-24 w-20 shrink-0 transition-opacity hover:opacity-80">
               <Image
                 src={logos.stacked}
                 alt="The Clay Club"
                 fill
+                sizes="80px"
                 className="object-contain"
               />
-            </div>
+            </LogoLink>
             <a
               href={contact.mapsUrl}
               target="_blank"
@@ -71,24 +58,18 @@ export default function Footer() {
             </a>
           </div>
 
-          <FooterNav className="flex items-center gap-8" />
-
+          <nav className="flex items-center gap-8">
+            {nav.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-body text-base tracking-wide text-white/90 transition-colors hover:text-white sm:text-lg"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
           <Socials />
-        </div>
-
-        <div className="mt-10 flex flex-col items-center gap-6 border-t border-white/15 pt-8 sm:flex-row sm:justify-between">
-          <div className="relative h-11 w-11">
-            <Image
-              src={logos.spiral}
-              alt="The Clay Club"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <p className="order-last font-body text-sm text-white/60 sm:order-none">
-            © {new Date().getFullYear()} The Clay Club. All rights reserved.
-          </p>
-          <FooterNav className="flex items-center gap-8" />
         </div>
       </div>
     </footer>
